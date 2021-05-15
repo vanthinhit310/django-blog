@@ -27,7 +27,7 @@ class Post(models.Model):
     description = models.TextField(max_length=250)
     image = models.ImageField(upload_to="posts/%Y/%m/%d/", blank=False)
     slug = models.SlugField(max_length=255, null=False, unique=True)
-    content = RichTextUploadingField(blank=False,null=False)
+    content = RichTextUploadingField(blank=False, null=False)
     status = models.CharField(
         max_length=60, choices=STATUS_CHOICES, default="published"
     )
