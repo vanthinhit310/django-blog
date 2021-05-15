@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html class="lt_ie9"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class=""><!--<![endif]-->
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>{% block title %}{% endblock %}</title>
+   {% load static %}
+   <!-- Standard Favicon -->
+	<link rel="icon" type="image/x-icon" href="{% static 'images//favicon.ico' %}" />
+	
+	<!-- For iPhone 4 Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images//apple-touch-icon-114x114-precomposed.png' %}">
+	
+	<!-- For iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images//apple-touch-icon-72x72-precomposed.png' %}">
+	
+	<!-- For iPhone: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-57x57-precomposed.png' %}">
+	
+	<!-- Library - Google Font Familys -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i,https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"> 
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/settings.css' %}">
+	<!-- RS5.0 Layers and Navigation Styles -->
+	<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/layers.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'revolution/css/navigation.css' %}">
+	
+	<!-- Library -->
+    <link rel="stylesheet" type="text/css" href="{% static 'libraries/lib.css' %}">
+	
+	<!-- Custom - Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">			
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navigation-menu.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/shortcode.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	
+	<!--[if lt IE 9]>
+		<script src="{% static 'js/html5/respond.min.js' %}"></script>
+    <![endif]-->
+</head>
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+    <div class="main-container">
+		<!-- Loader -->
+		{% include 'partials/spin.html' %}
+		<!-- Loader -->
+
+		<!-- Header Section -->
+		{% include 'partials/header.html' %}
+		<!-- Header Section -->
+	
+		<main class="site-main">
+			{% block content %}{% endblock %}		
+		</main>
+
+		<!-- Footer Section -->
+		{% include 'partials/footer.html' %}
+		<!-- Footer Section -->
+	</div>
+
+   <!-- JQuery v1.12.4 -->
+	<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+	<!-- Library - Js -->
+	<script src="{% static 'libraries/lib.js' %}"></script>
+		
+	<!-- RS5.0 Core JS Files -->
+	<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.tools.min.js' %}?rev=5.0"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/jquery.themepunch.revolution.min.js' %}?rev=5.0"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.migration.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+	{% block scripts %}{% endblock %}
+	<!-- Library - Theme JS -->
+	<script src="{% static 'js/functions.js' %}"></script>
+</body>
+</html>

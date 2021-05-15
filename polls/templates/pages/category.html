@@ -1,0 +1,128 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ slug|title }} - Magazine{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<!-- Page Banner -->
+<div class="container-fluid no-padding page-banner">
+    <!-- Container -->
+    <div class="container">
+        <h3>{{ slug|title }}</h3>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="active">{{ slug|title }}</li>
+        </ol>
+    </div><!-- Container /- -->
+</div><!-- Page Banner /- -->
+
+<!-- Sports Post Block -->
+<div class="container-fluid no-padding sports-block">
+    <!-- Container -->
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header section-header2">
+            <h6>Read the</h6>
+            <h3>{{ slug|title }} Articles</h3>
+        </div><!-- Section Header /- -->
+        <!-- Row -->
+        <div class="row">
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post1.jpg' %}" alt="Sports" /></a></div>
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">midfielder Mason hoping loan days done</a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Post Box /- -->
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">Westfield FFA Cup wrap Round of 32 MD1</a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post2.jpg' %}" alt="Sports" /></a></div>
+                </div>
+            </div><!-- Post Box /- -->
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post3.jpg' %}" alt="Sports" /></a></div>
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">inesh D'Souza: The secret history of the city</a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Post Box /- -->
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">Sydney Roosters Brisbane Broncos</a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post4.jpg' %}" alt="Sports" /></a></div>
+                </div>
+            </div><!-- Post Box /- -->
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post5.jpg' %}" alt="Sports" /></a></div>
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">Blacktown City striker Danny Choi scores 70m FFA Cup </a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Post Box /- -->
+            <!-- Post Box -->
+            <div class="col-md-4 col-sm-6 col-xs-6 post-box">
+                <div class="type-post">
+                    <div class="entry-header">
+                        <h3 class="entry-title"><a href="#">The Racist History of Portland, the Whitest City</a></h3>
+                        <div class="post-meta">
+                            <span>By : <a href="#">John Sina</a></span>
+                            <span><a href="#">25 mins ago</a></span>
+                            <span><a href="#"><i class="fa fa-commenting-o"></i> 25</a></span>
+                        </div>
+                    </div>
+                    <div class="entry-cover"><a href="#"><img src="{% static 'images/sport-post6.jpg' %}" alt="Sports" /></a></div>
+                </div>
+            </div><!-- Post Box /- -->
+        </div><!-- Row /- -->
+        <!-- Pagination -->
+        <nav class="ow-pagination">
+            <ul class="pager">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">....</a></li>
+                <li><a href="#">5</a></li>
+                <li class="next"><a href="#">Next <i class="arrow_right"></i></a></li>
+            </ul>
+        </nav><!-- Pagination /- -->
+    </div><!-- Container /- -->
+</div><!-- Sports Post Block /- -->
+{% endblock %}
