@@ -1,4 +1,4 @@
-"""demoweb URL Configuration
+"""djangoblog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path("app/", include("polls.urls")),
+    path("app/", include("blog.urls")),
     path("admin/", admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
 ]
