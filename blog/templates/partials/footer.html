@@ -14,7 +14,7 @@
             </ul>
         </div><!-- Container /- -->
     </div><!-- Social Block /- -->
-    
+
     <div class="container-fluid no-padding footer-middle">
         <!-- Container -->
         <div class="container">
@@ -74,7 +74,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p><i class="fa fa-copyright"></i> Copyright 2016  All Rights Reserved</p>
+                    <p><i class="fa fa-copyright"></i> Copyright 2016 All Rights Reserved</p>
                 </div>
                 <div class="col-md-8 ftr-menu-block">
                     <!-- nav -->
@@ -89,14 +89,33 @@
                         </div>
                         <div class="navbar-collapse collapse" id="ftr-navbar">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="index.html" title="Home">Home</a></li>
-                                <li><a href="#" title="Technology">technology</a></li>
-                                <li><a href="sports.html" title="Sports">sports</a></li>
-                                <li><a href="#" title="Lifestyle">lifestyle</a></li>
-                                <li><a href="#" title="Travel">travel</a></li>
-                                <li><a href="#" title="entertainment">entertainment</a></li>
+                                {% url 'category' slug='technology' as tech_url %}
+                                <li {% if request.get_full_path == tech_url %}class="active" {% endif %}>
+                                    <a href="{% url 'category' slug='technology' %}" title="Technology">technology</a>
+                                </li>
+
+                                {% url 'category' slug='sports' as sports_url %}
+                                <li {% if request.get_full_path == sports_url %}class="active" {% endif %}>
+                                    <a href="{% url 'category' slug='sports' %}" title="Sports">sports</a>
+                                </li>
+
+                                {% url 'category' slug='lifestyle' as lifestyle_url %}
+                                <li {% if request.get_full_path == lifestyle_url %}class="active" {% endif %}>
+                                    <a href="{% url 'category' slug='lifestyle' %}" title="Lifestyle">lifestyle</a>
+                                </li>
+
+                                {% url 'category' slug='travel' as travel_url %}
+                                <li {% if request.get_full_path == travel_url %}class="active" {% endif %}>
+                                    <a href="{% url 'category' slug='travel' %}" title="Travel">travel</a>
+                                </li>
+
+                                {% url 'category' slug='entertaiment' as entertaiment_url %}
+                                <li {% if request.get_full_path == entertaiment_url %}class="active" {% endif %}>
+                                    <a href="{% url 'category' slug='entertaiment' %}" title="entertainment">entertainment</a>
+                                </li>
                             </ul>
-                        </div><!--/.nav-collapse -->
+                        </div>
+                        <!--/.nav-collapse -->
                     </nav><!-- nav /- -->
                 </div>
             </div>

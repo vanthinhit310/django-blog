@@ -1,9 +1,9 @@
 {% load static %}
 <header class="container-fluid no-padding header-section header-section1">
-		
+
     <!-- SidePanel -->
     <div id="slidepanel">
-    
+
         <!-- Top Header -->
         <div class="container-fluid no-padding top-header">
             <!-- Container -->
@@ -23,7 +23,7 @@
                         <a href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" /></a>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-6 login-n-switch">
-                        
+
                         <div class="search"><a href="javascript:void(0);" id="search" title="Search"><i class="icon icon-Search"></i></a></div>
                         <div class="menu-switch"><a href="javascript:void(0);"><i class="fa fa-bars"></i></a></div>
                     </div>
@@ -35,12 +35,12 @@
                 </div><!-- Search Box /- -->
             </div><!-- Container /- -->
         </div><!-- Top Header /- -->
-        
+
     </div><!-- SidePanel /- -->
-    
+
     <div class="container-fluid no-padding menu-block">
         <!-- Container -->
-        <div class="container">	
+        <div class="container">
             <!-- nav -->
             <nav class="navbar navbar-default ow-navigation">
                 <div class="navbar-header">
@@ -54,17 +54,40 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar">
                     <ul class="nav navbar-nav menu-open">
-                        {% with url_name=request.resolver_match.url_name %}
-                        <li class="{% if url_name == 'index' %}active{% endif %}">
+                        {% url 'index' as index_url %}
+                        <li {% if request.get_full_path == index_url %}class="active" {% endif %}>
                             <a href="{% url 'index' %}" title="Home" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                         </li>
-                        <li class="{% if url_name == 'category' %}active{% endif %}"><a href="{% url 'category' slug='technology' %}" title="Technology">technology</a></li>
-                        <li class="{% if url_name == 'category' %}active{% endif %}"><a href="{% url 'category' slug='sports' %}" title="Sports">sports</a></li>
-                        <li class="{% if url_name == 'category' %}active{% endif %}"><a href="{% url 'category' slug='lifestyle' %}" title="Lifestyle">lifestyle</a></li>
-                        <li class="{% if url_name == 'category' %}active{% endif %}"><a href="{% url 'category' slug='travel' %}" title="Travel">travel</a></li>
-                        <li class="{% if url_name == 'category' %}active{% endif %}"><a href="{% url 'category' slug='entertaiment' %}" title="entertainment">entertainment</a></li>
-                        <li class="{% if url_name == 'contact' %}active{% endif %}"><a href="{% url 'contact' %}" title="contact">Contact</a></li>
-                        {% endwith %}
+
+                        {% url 'category' slug='technology' as tech_url %}
+                        <li {% if request.get_full_path == tech_url %}class="active" {% endif %}>
+                            <a href="{% url 'category' slug='technology' %}" title="Technology">technology</a>
+                        </li>
+
+                        {% url 'category' slug='sports' as sports_url %}
+                        <li {% if request.get_full_path == sports_url %}class="active" {% endif %}>
+                            <a href="{% url 'category' slug='sports' %}" title="Sports">sports</a>
+                        </li>
+
+                        {% url 'category' slug='lifestyle' as lifestyle_url %}
+                        <li {% if request.get_full_path == lifestyle_url %}class="active" {% endif %}>
+                            <a href="{% url 'category' slug='lifestyle' %}" title="Lifestyle">lifestyle</a>
+                        </li>
+
+                        {% url 'category' slug='travel' as travel_url %}
+                        <li {% if request.get_full_path == travel_url %}class="active" {% endif %}>
+                            <a href="{% url 'category' slug='travel' %}" title="Travel">travel</a>
+                        </li>
+
+                        {% url 'category' slug='entertaiment' as entertaiment_url %}
+                        <li {% if request.get_full_path == entertaiment_url %}class="active" {% endif %}>
+                            <a href="{% url 'category' slug='entertaiment' %}" title="entertainment">entertainment</a>
+                        </li>
+
+                        {% url 'contact' as contact_url %}
+                        <li {% if request.get_full_path == contact_url %}class="active" {% endif %}>
+                            <a href="{% url 'contact' %}" title="contact">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
